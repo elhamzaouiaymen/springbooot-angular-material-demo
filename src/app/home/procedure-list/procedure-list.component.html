@@ -4,6 +4,7 @@
 
 <mat-tab-group>
   <mat-tab label="Procedures">
+      <div class="example-container">
       <mat-card>
           <mat-form-field>
               <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
@@ -41,6 +42,7 @@
           <button style="" mat-raised-button color="accent" (click)="addItem()">
               Nouvelle Procédure
           </button>
+      </div>
       </div>
   </mat-tab>
   <mat-tab label="Créer une procédure">
