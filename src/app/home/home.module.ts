@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeRoutingModule } from './home-routing.module'
-
+import { FormsModule } from '@angular/forms';
 import { ProcedureDetailComponent } from './procedure-detail/procedure-detail.component';
 import { ProcedureUpdateComponent } from './procedure-update/procedure-update.component';
 import { ProcedureVersionsComponent } from './procedure-versions/procedure-versions.component';
@@ -29,6 +29,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatTabsModule,
     MatSidenavModule,
     MatFormFieldModule,
+    FormsModule,
     MatToolbarModule,
     MatSelectModule,
     MatInputModule,

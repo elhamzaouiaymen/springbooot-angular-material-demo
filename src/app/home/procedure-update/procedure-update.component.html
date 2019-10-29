@@ -1,1 +1,64 @@
-<p>procedure-update works!</p>
+<div layout="row">
+        <mat-card class="example-card">
+                <mat-card-header>
+                  <mat-card-title>Modifier Procédure</mat-card-title>
+                  <mat-card-subtitle>Test</mat-card-subtitle>
+                </mat-card-header>
+            
+                <mat-card-content class="padded">
+                        <div class="example-container">
+                                <mat-form-field hintLabel="Max 10 characters">
+                                  <input  matInput #input maxlength="10" placeholder="Veuillez entrer le nom de la procédure">
+                                  <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+                                </mat-form-field>
+                          
+                                <mat-form-field>
+                                  <mat-select placeholder="Selectionner une region">
+                                    <mat-option value="option">region 1</mat-option>
+                                    <mat-option value="option">region 2</mat-option>
+                                    <mat-option value="option">region 3</mat-option>
+                                    <mat-option value="option">region 4</mat-option>
+                                    <mat-option value="option">region 5</mat-option>
+                                    <mat-option value="option">region 6</mat-option>
+                                  </mat-select>
+                                </mat-form-field>
+                          
+                                <mat-form-field>
+                                  <input matInput #input placeholder="Courant">
+                                </mat-form-field>
+                          
+                                <mat-form-field>
+                                  <input matInput #input placeholder="Description">
+                                </mat-form-field>
+                          
+                                <mat-form-field>
+                                  <input matInput #input placeholder="Durée d\'acquisition">
+                                </mat-form-field>
+                          
+                          
+                                  <mat-form-field>
+                                    <input matInput #input placeholder="Filtre addtionnel">
+                                  </mat-form-field>
+                          
+                                <mat-form-field>
+                                  <input matInput #input placeholder="Foyer">
+                                </mat-form-field>
+                          
+                                <mat-form-field>
+                                  <input matInput #input placeholder="Fréquence d'acquisition">
+                                </mat-form-field>
+                          
+                                <mat-form-field>
+                                  <input matInput #input placeholder="Nombre de séquences d'indices">
+                                </mat-form-field>
+                          
+                                <mat-form-field>
+                                  <input matInput #input placeholder="Tension">
+                                </mat-form-field>
+                              </div>
+                </mat-card-content>
+                <mat-card-actions class="padded">
+                  <button color="accent" mat-raised-button>Confirmer</button>
+                </mat-card-actions>
+        </mat-card>
+</div>

@@ -1,1 +1,17 @@
-<p>procedure-detail works!</p>
+<div layout="row">
+        <mat-card class="example-card">
+                <mat-card-header>
+                  <mat-card-title>Détails Procédure</mat-card-title>
+                  <mat-card-subtitle>{{currentProcedure.nom}}</mat-card-subtitle>
+                </mat-card-header>
+            
+                <mat-card-content class="padded">
+                  <p>
+                    {{currentProcedure.description}}
+                  </p>
+                </mat-card-content>
+                <mat-card-actions class="padded">
+                  <button color="accent" mat-raised-button>Modifier</button>
+                </mat-card-actions>
+        </mat-card>
+</div>
