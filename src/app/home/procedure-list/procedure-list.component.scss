@@ -1,0 +1,30 @@
+table {
+  width: 50%;
+  margin-top: 15px !important;
+  margin: auto;
+
+  td, th{
+    margin: auto;
+    text-align: center;
+  }
+}
+
+.example-container {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.example-container > * {
+  margin: auto;
+
+
+}
+
+mat-card{
+  width: 40% !important;
+}
+
+mat-form-field{
+  width: 100% !important;
+}
