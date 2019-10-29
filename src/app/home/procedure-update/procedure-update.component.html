@@ -7,13 +7,15 @@
             
                 <mat-card-content class="padded">
                         <div class="example-container">
+                                <form [formGroup]="updateForm" autocomplete="off" novalidate (ngSubmit)="createOwner(ownerForm.value)" fxLayout="column wrap"
+                                fxLayoutAlign="center center" fxLayoutGap="10px">
                                 <mat-form-field hintLabel="Max 10 characters">
-                                  <input  matInput #input maxlength="10" placeholder="Veuillez entrer le nom de la procédure">
+                                  <input formControlName="nom" matInput #input maxlength="10" placeholder="Veuillez entrer le nom de la procédure">
                                   <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
                                 </mat-form-field>
                           
                                 <mat-form-field>
-                                  <mat-select placeholder="Selectionner une region">
+                                  <mat-select formControlName="region" placeholder="Selectionner une region">
                                     <mat-option value="option">region 1</mat-option>
                                     <mat-option value="option">region 2</mat-option>
                                     <mat-option value="option">region 3</mat-option>
@@ -24,41 +26,43 @@
                                 </mat-form-field>
                           
                                 <mat-form-field>
-                                  <input matInput #input placeholder="Courant">
+                                  <input formControlName="courant" matInput #input placeholder="Courant">
                                 </mat-form-field>
                           
                                 <mat-form-field>
-                                  <input matInput #input placeholder="Description">
+                                  <input formControlName="description" matInput #input placeholder="Description">
                                 </mat-form-field>
                           
                                 <mat-form-field>
-                                  <input matInput #input placeholder="Durée d\'acquisition">
+                                  <input formControlName="duree_acquisition" matInput #input placeholder="Durée d\'acquisition">
                                 </mat-form-field>
                           
                           
                                   <mat-form-field>
-                                    <input matInput #input placeholder="Filtre addtionnel">
+                                    <input formControlName="filtre_aditionnel" matInput #input placeholder="Filtre addtionnel">
                                   </mat-form-field>
                           
                                 <mat-form-field>
-                                  <input matInput #input placeholder="Foyer">
+                                  <input matInput formControlName="foyer" #input placeholder="Foyer">
                                 </mat-form-field>
                           
                                 <mat-form-field>
-                                  <input matInput #input placeholder="Fréquence d'acquisition">
+                                  <input matInput formControlName="frequence_acquisition" #input placeholder="Fréquence d'acquisition">
                                 </mat-form-field>
                           
                                 <mat-form-field>
-                                  <input matInput #input placeholder="Nombre de séquences d'indices">
+                                  <input matInput formControlName="nombre_sequence_indices" #input placeholder="Nombre de séquences d'indices">
                                 </mat-form-field>
                           
                                 <mat-form-field>
-                                  <input matInput #input placeholder="Tension">
+                                  <input matInput formControlName="tension" #input placeholder="Tension">
                                 </mat-form-field>
+                            </form>
                               </div>
+                            
                 </mat-card-content>
                 <mat-card-actions class="padded">
-                  <button color="accent" mat-raised-button>Confirmer</button>
+                  <button (click)="update()" color="accent" mat-raised-button>Confirmer</button>
                 </mat-card-actions>
         </mat-card>
 </div>

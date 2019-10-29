@@ -1,6 +1,4 @@
-
 <mat-toolbar color="primary">
-
   <span>Amusons nous avec Spring Boot + Angular 8 - Cyrine REBHI</span>
 </mat-toolbar>
 
@@ -52,61 +50,66 @@
         <mat-card-title>Nouvelle Procédure</mat-card-title>
       </mat-card-header>
       <mat-card-content>
-    <div class="example-container">
-      <mat-form-field hintLabel="Max 10 characters">
-        <input [(ngModel)]="procedure.nom" matInput #input maxlength="10" placeholder="Veuillez entrer le nom de la procédure">
-        <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
-      </mat-form-field>
-
-      <mat-form-field>
-        <mat-select placeholder="Selectionner une region">
-          <mat-option value="option">region 1</mat-option>
-          <mat-option value="option">region 2</mat-option>
-          <mat-option value="option">region 3</mat-option>
-          <mat-option value="option">region 4</mat-option>
-          <mat-option value="option">region 5</mat-option>
-          <mat-option value="option">region 6</mat-option>
-        </mat-select>
-      </mat-form-field>
-
-      <mat-form-field>
-        <input matInput #input placeholder="Courant">
-      </mat-form-field>
-
-      <mat-form-field>
-        <input matInput #input placeholder="Description">
-      </mat-form-field>
-
-      <mat-form-field>
-        <input matInput #input placeholder="Durée d\'acquisition">
-      </mat-form-field>
-
-
-        <mat-form-field>
-          <input matInput #input placeholder="Filtre addtionnel">
-        </mat-form-field>
-
-      <mat-form-field>
-        <input matInput #input placeholder="Foyer">
-      </mat-form-field>
-
-      <mat-form-field>
-        <input matInput #input placeholder="Fréquence d'acquisition">
-      </mat-form-field>
-
-      <mat-form-field>
-        <input matInput #input placeholder="Nombre de séquences d'indices">
-      </mat-form-field>
-
-      <mat-form-field>
-        <input matInput #input placeholder="Tension">
-      </mat-form-field>
-    </div>
+                  
+                              <div class="example-container">
+                                      <form [formGroup]="addProcedureForm" autocomplete="off" novalidate (ngSubmit)="createOwner(ownerForm.value)" fxLayout="column wrap"
+                                      fxLayoutAlign="center center" fxLayoutGap="10px">
+                                      <mat-form-field hintLabel="Max 10 characters">
+                                        <input formControlName="nom" matInput #input maxlength="10" placeholder="Veuillez entrer le nom de la procédure">
+                                        <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+                                      </mat-form-field>
+                                
+                                      <mat-form-field>
+                                        <mat-select formControlName="region" placeholder="Selectionner une region">
+                                          <mat-option value="option">region 1</mat-option>
+                                          <mat-option value="option">region 2</mat-option>
+                                          <mat-option value="option">region 3</mat-option>
+                                          <mat-option value="option">region 4</mat-option>
+                                          <mat-option value="option">region 5</mat-option>
+                                          <mat-option value="option">region 6</mat-option>
+                                        </mat-select>
+                                      </mat-form-field>
+                                
+                                      <mat-form-field>
+                                        <input formControlName="courant" matInput #input placeholder="Courant">
+                                      </mat-form-field>
+                                
+                                      <mat-form-field>
+                                        <input formControlName="description" matInput #input placeholder="Description">
+                                      </mat-form-field>
+                                
+                                      <mat-form-field>
+                                        <input formControlName="duree_acquisition" matInput #input placeholder="Durée d\'acquisition">
+                                      </mat-form-field>
+                                
+                                
+                                        <mat-form-field>
+                                          <input formControlName="filtre_aditionnel" matInput #input placeholder="Filtre addtionnel">
+                                        </mat-form-field>
+                                
+                                      <mat-form-field>
+                                        <input matInput formControlName="foyer" #input placeholder="Foyer">
+                                      </mat-form-field>
+                                
+                                      <mat-form-field>
+                                        <input matInput formControlName="frequence_acquisition" #input placeholder="Fréquence d'acquisition">
+                                      </mat-form-field>
+                                
+                                      <mat-form-field>
+                                        <input matInput formControlName="nombre_sequence_indices" #input placeholder="Nombre de séquences d'indices">
+                                      </mat-form-field>
+                                
+                                      <mat-form-field>
+                                        <input matInput formControlName="tension" #input placeholder="Tension">
+                                      </mat-form-field>
+                                  </form>
+                                    </div>
+      
 
     </mat-card-content>
 
     <mat-card-actions>
-       <button mat-button>Créer</button>
+       <button (click)="addProcedure()" mat-button>Créer</button>
      </mat-card-actions>
     </mat-card>
     </div>

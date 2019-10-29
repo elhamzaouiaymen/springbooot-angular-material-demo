@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ProcedureDataService } from '../../services/procedure-data.service';
 import { IProcedure } from '../../models/procedure';
 import { MatTableDataSource } from '@angular/material';
+import { FormBuilder, Validators } from '@angular/forms';
 
 
 const ELEMENT_DATA: any[] = [
@@ -29,8 +30,12 @@ export class ProcedureListComponent implements OnInit {
   dataSource: MatTableDataSource<any>;
 
   procedure: IProcedure;
+  addProcedureForm: any; 
 
-  constructor(private router: Router, private procedureDataService: ProcedureDataService) {
+  constructor(private router: Router, private procedureDataService: ProcedureDataService,
+              private formBuilder: FormBuilder) {
+
+                this.buildForm();
 
     this.dataSource =  new MatTableDataSource(ELEMENT_DATA);
     this.procedure = {
@@ -49,10 +54,31 @@ export class ProcedureListComponent implements OnInit {
       version: '',
 
     }
+  }
 
+  addProcedure(){
+    if(this.addProcedureForm.valid){
+      this.procedureDataService.createProcedure(this.addProcedureForm.value)
+      .subscribe((response)=>{
+        console.log(response);
+      })
+    }
+  }
 
-    
-    
+  buildForm(){
+    this.addProcedureForm = this.formBuilder.group({
+      nom: ['', Validators.required],
+      region: ['', Validators.required],
+      description: ['', Validators.required],
+      courant: ['', Validators.required],
+      foyer: ['', Validators.required],
+      duree_acquisition: ['', Validators.required],
+      filtre_aditionnel: ['', Validators.required],
+      frequence_acquisition: ['', Validators.required],
+      nombre_sequence_indices: ['', Validators.required],
+      tension: ['', Validators.required]
+
+    })
   }
 
   applyFilter(filterValue: string) {
